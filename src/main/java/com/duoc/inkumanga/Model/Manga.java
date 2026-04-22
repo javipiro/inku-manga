@@ -1,7 +1,8 @@
-package com.duoc.inkumanga;
+package com.duoc.inkumanga.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -9,25 +10,22 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
 @Table(name="mangas")
-public class Mangamodel {
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Manga {
     @NotNull
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY) 
     @Id
-    private int id;
+    private int id_manga;
     @NotBlank
-    private String nombre;
+    private String nombre_manga;
     @NotBlank
     private String genero;
     @NotBlank
     private String editorial;
     @NotBlank
     private String resumen;
-    
-
 }

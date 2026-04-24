@@ -1,11 +1,11 @@
 package com.duoc.inkumanga.Model;
-
-import org.springframework.format.annotation.DateTimeFormat;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -29,4 +29,6 @@ public class Usuario {
     private String correo;
     @NotNull
     private int fecha_nac_us;
+    @OneToMany
+    private List<Resena> resenas;
 }

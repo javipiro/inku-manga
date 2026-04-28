@@ -1,4 +1,5 @@
-package com.duoc.inkumanga.Model;
+package com.duoc.inkumanga.model;
+
 import java.util.List;
 
 import jakarta.persistence.Entity;

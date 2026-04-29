@@ -1,7 +1,8 @@
-package com.duoc.inkumanga.repository;
+package com.duoc.inkumanga.repository_min;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
 import com.duoc.inkumanga.model.Autor;
 @Repository
 public interface AutorRepository extends JpaRepository<Autor, Integer> {

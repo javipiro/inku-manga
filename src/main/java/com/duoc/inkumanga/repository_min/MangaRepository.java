@@ -1,8 +1,10 @@
-package com.duoc.inkumanga.repository;
+package com.duoc.inkumanga.repository_min;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.data.jpa.repository.JpaRepository;
+
 import com.duoc.inkumanga.model.Manga;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 @Repository
 public interface MangaRepository extends JpaRepository<Manga, Integer> {
 }

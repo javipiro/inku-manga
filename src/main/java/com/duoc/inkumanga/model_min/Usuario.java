@@ -1,4 +1,4 @@
-package com.duoc.inkumanga.model;
+package com.duoc.inkumanga.model_min;
 
 import java.util.List;
 
@@ -15,19 +15,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor 
 @NoArgsConstructor
+@AllArgsConstructor
+@Table(name="usuarios")
 @Entity
-@Table(name="autores")
-public class Autor {
+public class Usuario {
     @Id
     @NotNull
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_au;
+    @GeneratedValue(strategy=GenerationType.IDENTITY) 
+    private int id_us;
     @NotBlank
-    private String nombre_au;
+    private String nombre_us;
     @NotBlank
-    private String fecha_nac_au;
+    private String correo;
+    @NotNull
+    private int fecha_nac_us;
     @OneToMany
-    private List<Manga> manga;
+    private List<Resena> resenas;
 }

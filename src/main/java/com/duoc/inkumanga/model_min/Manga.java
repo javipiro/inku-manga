@@ -1,4 +1,4 @@
-package com.duoc.inkumanga.model;
+package com.duoc.inkumanga.model_min;
 
 import java.util.List;
 

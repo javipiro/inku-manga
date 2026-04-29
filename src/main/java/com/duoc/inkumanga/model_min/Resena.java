@@ -1,4 +1,4 @@
-package com.duoc.inkumanga.model;
+package com.duoc.inkumanga.model_min;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

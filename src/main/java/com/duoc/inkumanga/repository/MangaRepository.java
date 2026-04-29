@@ -1,4 +1,4 @@
-package com.duoc.inkumanga.repository_min;
+package com.duoc.inkumanga.repository;
 
 import org.springframework.stereotype.Repository;
 

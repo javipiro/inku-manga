@@ -21,16 +21,19 @@ public class MangaController {
 
     @GetMapping
     public ResponseEntity<List<Manga>> listarMangas() {
+        System.out.println("[MangaController] -> listarMangas");
         return ResponseEntity.ok(mangaService.getMangas());
     }
 
     @PostMapping
     public ResponseEntity<Manga> agregarManga(@Valid @RequestBody Manga manga) {
+        System.out.println("[MangaController] -> agregarManga");
         return ResponseEntity.status(HttpStatus.CREATED).body(mangaService.saveManga(manga));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Manga> buscarManga(@PathVariable int id) {
+        System.out.println("[MangaController] -> buscarManga id=" + id);
         Manga manga = mangaService.getMangaId(id);
         if (manga == null) {
             return ResponseEntity.notFound().build();
@@ -40,6 +43,7 @@ public class MangaController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Manga> actualizarManga(@PathVariable int id, @Valid @RequestBody Manga manga) {
+        System.out.println("[MangaController] -> actualizarManga id=" + id);
         manga.setId_manga(id);
         Manga actualizado = mangaService.updateManga(manga);
         if (actualizado == null) {
@@ -50,12 +54,14 @@ public class MangaController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarManga(@PathVariable int id) {
+        System.out.println("[MangaController] -> eliminarManga id=" + id);
         mangaService.deleteManga(id);
         return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/con-autor")
     public ResponseEntity<List<MangaAutorDTO>> mangasConAutor() {
+        System.out.println("[MangaController] -> mangasConAutor");
         return ResponseEntity.ok(mangaService.getMangasConAutor());
     }
 }

@@ -13,21 +13,16 @@ public class JikanController {
     @Autowired
     private JikanService jikanService;
 
-    /**
-     * GET /api/v1/jikan/manga/{id}
-     * Ej: /api/v1/jikan/manga/1  → Monster
-     */
     @GetMapping("/manga/{id}")
     public ResponseEntity<JikanMangaDTO> getManga(@PathVariable int id) {
+        System.out.println("[JikanController] -> getManga id=" + id);
         JikanMangaDTO resultado = jikanService.obtenerMangaPorId(id);
         return ResponseEntity.ok(resultado);
     }
 
-    /**
-     * GET /api/v1/jikan/manga/buscar?q=berserk
-     */
     @GetMapping("/manga/buscar")
     public ResponseEntity<Object> buscarManga(@RequestParam String q) {
+        System.out.println("[JikanController] -> buscarManga q=" + q);
         return ResponseEntity.ok(jikanService.buscarManga(q));
     }
 }

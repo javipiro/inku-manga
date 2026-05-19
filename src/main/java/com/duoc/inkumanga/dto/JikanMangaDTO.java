@@ -9,7 +9,6 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class JikanMangaDTO {
 
-    // La API envuelve todo en un objeto "data"
     private MangaData data;
 
     @Data
@@ -19,7 +18,7 @@ public class JikanMangaDTO {
         private Integer malId;
 
         private String title;
-        private String status;       // "Finished", "Publishing", etc.
+        private String status;   
         private Integer chapters;
         private Integer volumes;
         private Double score;

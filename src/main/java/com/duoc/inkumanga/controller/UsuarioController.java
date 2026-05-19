@@ -20,16 +20,19 @@ public class UsuarioController {
 
     @GetMapping
     public ResponseEntity<List<Usuario>> listarUsuarios() {
+        System.out.println("[UsuarioController] -> listarUsuarios");
         return ResponseEntity.ok(usuarioService.getUsuarios());
     }
 
     @PostMapping
     public ResponseEntity<Usuario> agregarUsuario(@Valid @RequestBody Usuario usuario) {
+        System.out.println("[UsuarioController] -> agregarUsuario");
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.saveUsuario(usuario));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> buscarUsuario(@PathVariable int id) {
+        System.out.println("[UsuarioController] -> buscarUsuario id=" + id);
         Usuario usuario = usuarioService.getUsuarioId(id);
         if (usuario == null) {
             return ResponseEntity.notFound().build();
@@ -39,6 +42,7 @@ public class UsuarioController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Usuario> actualizarUsuario(@PathVariable int id, @Valid @RequestBody Usuario usuario) {
+        System.out.println("[UsuarioController] -> actualizarUsuario id=" + id);
         usuario.setId_us(id);
         Usuario actualizado = usuarioService.updateUsuario(usuario);
         if (actualizado == null) {
@@ -49,6 +53,7 @@ public class UsuarioController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarUsuario(@PathVariable int id) {
+        System.out.println("[UsuarioController] -> eliminarUsuario id=" + id);
         usuarioService.deleteUsuario(id);
         return ResponseEntity.noContent().build();
     }

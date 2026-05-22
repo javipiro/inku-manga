@@ -21,6 +21,6 @@ public class Resena {
     @GeneratedValue(strategy=GenerationType.IDENTITY)    
     private int id_re;
     private String comentario;
-    private int calificacion;
+    private Integer calificacion;
     private String fecha_re;
 }

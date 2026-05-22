@@ -29,7 +29,7 @@ public class Usuario {
     @NotBlank
     private String correo;
     @NotNull
-    private int fecha_nac_us;
+    private Integer fecha_nac_us;
     @OneToMany
     private List<Resena> resenas;
 }

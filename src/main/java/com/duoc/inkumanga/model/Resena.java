@@ -19,7 +19,7 @@ public class Resena {
     @Id
     @NotNull
     @GeneratedValue(strategy=GenerationType.IDENTITY)    
-    private int id_re;
+    private Integer id_re;
     private String comentario;
     private Integer calificacion;
     private String fecha_re;

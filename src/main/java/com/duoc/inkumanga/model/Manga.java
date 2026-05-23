@@ -22,7 +22,7 @@ public class Manga {
     @NotNull
     @GeneratedValue(strategy=GenerationType.IDENTITY) 
     @Id
-    private int id_manga;
+    private Integer id_manga;
     @NotBlank
     private String nombre_manga;
     @NotBlank

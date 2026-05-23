@@ -23,7 +23,7 @@ public class Usuario {
     @Id
     @NotNull
     @GeneratedValue(strategy=GenerationType.IDENTITY) 
-    private int id_us;
+    private Integer id_us;
     @NotBlank
     private String nombre_us;
     @NotBlank

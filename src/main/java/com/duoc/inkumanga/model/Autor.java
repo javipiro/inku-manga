@@ -23,7 +23,7 @@ public class Autor {
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_au;
+    private Integer id_au;
     @NotBlank
     private String nombre_au;
     @NotBlank

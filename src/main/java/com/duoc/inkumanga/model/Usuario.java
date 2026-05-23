@@ -21,7 +21,6 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Usuario {
     @Id
-    @NotNull
     @GeneratedValue(strategy=GenerationType.IDENTITY) 
     private Integer id_us;
     @NotBlank

@@ -9,7 +9,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +18,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Manga {
-    @NotNull
     @GeneratedValue(strategy=GenerationType.IDENTITY) 
     @Id
     private Integer id_manga;

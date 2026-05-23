@@ -5,7 +5,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +16,6 @@ import lombok.NoArgsConstructor;
 @Table(name="resenas")
 public class Resena {
     @Id
-    @NotNull
     @GeneratedValue(strategy=GenerationType.IDENTITY)    
     private Integer id_re;
     private String comentario;

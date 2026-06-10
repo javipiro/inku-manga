@@ -4,7 +4,7 @@ import com.duoc.inkumanga.dto.AuthRequest;
 import com.duoc.inkumanga.dto.AuthResponse;
 import com.duoc.inkumanga.model.Usuario;
 import com.duoc.inkumanga.repository.UsuarioRepository;
-import com.duoc.inkumanga.security.JwtUtil;
+import com.duoc.inkumanga.Security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

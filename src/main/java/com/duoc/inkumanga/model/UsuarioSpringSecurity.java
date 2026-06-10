@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "usuarioSpringSecurity")
-public class Usuario {
+public class UsuarioSpringSecurity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

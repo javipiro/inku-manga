@@ -1,7 +1,7 @@
-package com.duoc.inkumanga.security;
+package com.duoc.inkumanga.Security;
 
-import com.duoc.inkumanga.model.usuarioSpringSecurity;
-import com.duoc.inkumanga.repository.UsuarioRepositorySpringSecurity;
+import com.duoc.inkumanga.model.UsuarioSpringSecurity;
+import com.duoc.inkumanga.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -27,7 +27,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Usuario usuario = usuarioRepository
+        UsuarioSpringSecurity usuario = (UsuarioSpringSecurity) usuarioRepository
                 .findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado: " + username));
 

@@ -31,4 +31,16 @@ public class Usuario {
     private Integer fecha_nac_us;
     @OneToMany
     private List<Resena> resenas;
+    public void setUsername(String username) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setUsername'");
+    }
+    public void setPassword(String encode) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setPassword'");
+    }
+    public void setRole(String string) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setRole'");
+    }
 }

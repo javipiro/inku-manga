@@ -1,4 +1,4 @@
-package com.duoc.inkumanga.security;
+package com.duoc.inkumanga.Security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

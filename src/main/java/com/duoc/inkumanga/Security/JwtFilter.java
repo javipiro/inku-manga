@@ -1,4 +1,4 @@
-package com.duoc.inkumanga.security;
+package com.duoc.inkumanga.Security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

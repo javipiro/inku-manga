@@ -43,6 +43,7 @@ public class AuthController {
      * Registra un nuevo usuario con rol USER.
      * La contraseña se almacena encriptada con BCrypt.
      */
+   
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody AuthRequest request) {
         if (usuarioRepository.findByUsername(request.getUsername()).isPresent()) {
@@ -53,8 +54,11 @@ public class AuthController {
         usuario.setUsername(request.getUsername());
         usuario.setPassword(passwordEncoder.encode(request.getPassword()));
         usuario.setRole("ROLE_USER");
-        usuarioRepository.save(usuario);
+        usuario.setCorreo(request.getCorreo());             // ← agregar
+        usuario.setNombre_us(request.getNombre_us());       // ← agregar
+        usuario.setFecha_nac_us(request.getFecha_nac_us()); // ← agregar
 
+        usuarioRepository.save(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body("Usuario registrado exitosamente");
     }
 

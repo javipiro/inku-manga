@@ -14,15 +14,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Filtro JWT que se ejecuta una vez por cada request HTTP (OncePerRequestFilter).
- *
- * Flujo:
- *  1. Lee el header "Authorization: Bearer <token>"
- *  2. Valida el token con JwtUtil
- *  3. Si es válido, extrae username y rol y los registra en el SecurityContext
- *  4. Spring Security usa ese contexto para aplicar las reglas de autorización
- */
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
@@ -44,19 +35,15 @@ public class JwtFilter extends OncePerRequestFilter {
                 String username = jwtUtil.extractUsername(token);
                 String role = jwtUtil.extractRole(token);
 
-                // Construye el objeto de autenticación con el rol del usuario
                 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
                         username,
                         null,
                         List.of(new SimpleGrantedAuthority(role))
                 );
 
-                // Registra la autenticación en el contexto de seguridad de este hilo
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
         }
-
-        // Continúa con el siguiente filtro de la cadena
         filterChain.doFilter(request, response);
     }
 }

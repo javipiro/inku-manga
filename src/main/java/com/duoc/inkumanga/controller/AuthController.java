@@ -38,12 +38,6 @@ public class AuthController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-
-    /**
-     * Registra un nuevo usuario con rol USER.
-     * La contraseña se almacena encriptada con BCrypt.
-     */
-   
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody AuthRequest request) {
         if (usuarioRepository.findByUsername(request.getUsername()).isPresent()) {
@@ -54,19 +48,13 @@ public class AuthController {
         usuario.setUsername(request.getUsername());
         usuario.setPassword(passwordEncoder.encode(request.getPassword()));
         usuario.setRole("ROLE_USER");
-        usuario.setCorreo(request.getCorreo());             // ← agregar
-        usuario.setNombre_us(request.getNombre_us());       // ← agregar
-        usuario.setFecha_nac_us(request.getFecha_nac_us()); // ← agregar
+        usuario.setCorreo(request.getCorreo());            
+        usuario.setNombre_us(request.getNombre_us());       
+        usuario.setFecha_nac_us(request.getFecha_nac_us()); 
 
         usuarioRepository.save(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body("Usuario registrado exitosamente");
     }
-
-    /**
-     * Autentica al usuario y devuelve un JWT válido por 24 horas.
-     * El token debe enviarse en el header Authorization de los siguientes requests:
-     *   Authorization: Bearer <token>
-     */
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
         try {
